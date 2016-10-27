@@ -1,18 +1,160 @@
-<html>
+
+
+<!DOCTYPE html>
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+        
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
-      };
+
+//message counter//
+
+        var messageCount=0;
+
+		var inboxCount = document.createElement("span");
+
+		inboxCounter.appendChild(inboxCount);
+
+//render first emails//
+    
+    for (var i = 0; i<window.geemails.length; i++){
+    
+    	messageCount += 1;
+    	
+	  	
+ 
+  			var subject = document.createElement('div');
+     			subject.className = "subject";
+    			subject.innerHTML = " Subject: " + geemails[i].subject;
+    			Emails.appendChild(subject);
+ 
+  			var sender = document.createElement('div');
+    			sender.className = "sender";
+    			sender.innerHTML = " Sender: " + geemails[i].sender;
+    			Emails.appendChild(sender);
+
+  			var body = document.createElement('p');
+    			body.className = "body";
+    			body.innerHTML = " Message: " + geemails[i].body;
+    			subject.appendChild(body);
+
+  			var date = document.createElement('div');
+    			date.className = "date";
+    			date.innerHTML = " Date: " + geemails[i].date;
+    			Emails.appendChild(date);
+
+            var divider = document.createElement('img');
+                divider.className = "divider";
+                divider.src = "http://files.cluster2.hgsitebuilder.com/hostgator89882/image/flourish4.png";
+                Emails.appendChild(divider);  
+
+ 
+//toggle first Emails//  
+     
+  var content = document.getElementsByClassName("subject");
+             for( var p = 0; p<content.length; p++){
+                 content[p].addEventListener('click', toggle);
+             
+
+  function toggle(){
+                 var content = this.querySelectorAll('.body')[0];
+                 if(content.style.display === 'none'){
+                     content.style.display = 'block';
+                 } else {
+                     content.style.display = 'none';
+                 }
+             }
+ 	}
+ 	inboxCount.innerHTML = " You have: " + messageCount + " new Emails "; 
+    }
+};
+//This is the new message count.  Starting from 10(first emails = 1-10, this will start it from 10 and continue)//
+  newMessageCount = 10;
+
+//set interval set to 4 seconds//
+  setInterval(addMail, 4000);
+
+//function to add new mail//
+  function addMail(){
+
+    newMessageCount +=1;
+
+    var newMail = getNewMessage();
+
+    var subject = document.createElement('div');
+                subject.className = "subject";
+                subject.innerHTML = " Subject: " + newMail.subject;
+                Emails.appendChild(subject);
+ 
+            var sender = document.createElement('div');
+                sender.className = "sender";
+                sender.innerHTML = " Sender: " + newMail.sender;
+                Emails.appendChild(sender);
+
+            var body = document.createElement('p');
+                body.className = "body";
+                body.innerHTML = " Message: " + newMail.body;
+                subject.appendChild(body);
+
+            var date = document.createElement('div');
+                date.className = "date";
+                date.innerHTML = " Date: " + newMail.date;
+                Emails.appendChild(date);
+
+            var divider = document.createElement('img');
+                divider.className = "divider";
+                divider.src = "http://files.cluster2.hgsitebuilder.com/hostgator89882/image/flourish4.png";
+                Emails.appendChild(divider);    
+
+//toggle function for the new emails//  
+    var newContent = document.getElementsByClassName("subject");
+             for( var c = 0; c<newContent.length; c++){
+                 newContent[c].addEventListener('click', newToggle);
+             }
+
+  function newToggle(){
+                 var newContent = this.querySelectorAll('.body')[0];
+                 if(newContent.style.display === 'none'){
+                     newContent.style.display = 'block';
+                 } else {
+                     newContent.style.display = 'none';
+                 }
+             }
+             inboxCounter.innerHTML = " You have: " + newMessageCount + " new Emails ";
+}
+
     </script>
 	</head>
 	<body>
-		<div class="container" id="main">
-			Build Me!
-		</div>
+	       
+			<div class="container" id="main">
+				<section class="top header">
+            
+                    
+                    <div id = "title">GEE-Mail<iframe src="//giphy.com/embed/jWexOOlYe241y" width="480" height="466" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>by MOtaJ
+                    </div>
+                    <div id = "werk">
+                    <ul>
+                        <li a href = "#">Inbox</li>
+                        <li a href = "#">Important</li>
+                        <li a href = "#">Spam</li>
+                        <li id = "right" a href = "#">Sent Mail</li>
+                    </ul>
+                    </div>
+			</div>
+                  
+            
+            
+            <span id = "inboxCounter"></span>
+            
+			
+            <div id = "Emails"></div>
+			
+			
+			</div>
 	</body>
 </html>
