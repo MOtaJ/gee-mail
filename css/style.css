@@ -18,15 +18,8 @@ body{
  	margin-bottom: 20px;
 }
 
-/*#label{
-	font-size: 20px;
-	text-decoration: underline;
-}*/
-
 #werk{
 	text-align: center;
-	/*width: 600px;
-	height: 100px;*/
 }
 
 ul{
@@ -70,14 +63,10 @@ li:hover{
 #span {
 	border: 2px solid;
 	border-radius:10px;
-
 }
 
 #main{
 	margin-top: 50px;
-	
-
-
 }
 
 #Emails{
@@ -98,12 +87,6 @@ iframe{
 	height: 80px;
 }
 
-div{
-	/*width: 1200px;
-	padding: 20px;*/
-	
-}
-
 .subject{
 	border-left: solid black 5px;
 	border-top: solid black 5px;
@@ -111,8 +94,7 @@ div{
 	background-color: white;
 	padding: 5px;
 	font-family: Comic Sans MS;
-	margin-top: 20px;
-	
+	margin-top: 20px;	
 }
 
 .subject:hover{
@@ -143,8 +125,7 @@ div{
 	background-color: white;
 	padding: 5px;
 	margin-bottom: 10px;
-	border-bottom: solid black 5px;
-	
+	border-bottom: solid black 5px;	
 }
 
 
